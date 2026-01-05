@@ -19,7 +19,6 @@ class User:
         self.user_id = user_id
         self.name = name
         self.borrowed_books = []  # List to store borrowed books
-
     def borrow_book(self, book):
         if book.check_availability():
             self.borrowed_books.append(book)
@@ -27,7 +26,6 @@ class User:
             print(f"{self.name} has borrowed '{book.title}'")
         else:
             print(f"Sorry, '{book.title}' is not available for borrowing.")
-
     def return_book(self, book):
         if book in self.borrowed_books:
             self.borrowed_books.remove(book)
